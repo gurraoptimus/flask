@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
+a = False
 
 @app.route("/")
 def home():
@@ -12,6 +13,7 @@ def user(name):
 
 @app.route("/admin")
 def admin():
+    if a:
     return redirect(url_for("home"))
 
 if __name__ == "__main__":
